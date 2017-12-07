@@ -39,6 +39,7 @@ type Middleware struct {
 	nextHandler   *Middleware
 	newestHandler *Middleware
 	handler       http.Handler
+	postHandler   http.Handler
 	name          string
 }
 
@@ -50,7 +51,9 @@ func (c *Middleware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if c.nextHandler != nil {
 		c.nextHandler.ServeHTTP(w, r)
 	}
-
+	if c.postHandler != nil {
+		c.postHandler.ServeHTTP(w, r)
+	}
 	w.Write([]byte("end => " + c.name + " middleware\n"))
 }
 
@@ -92,6 +95,10 @@ func main() {
 	ad1 := &Middleware{
 		name:    "ad1",
 		handler: http.HandlerFunc(myHandler),
+		postHandler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			// r.Context
+			w.Write([]byte("postHandler\n"))
+		}),
 	}
 	ad2 := &Middleware{
 		name: "ad2",
