@@ -51,6 +51,8 @@ go build
 go install
 ```
 
+- ### 监控代码变化自动重启 [gin](https://github.com/codegangsta/gin) [fresh](https://github.com/pilu/fresh)
+
 - ### 直接代码启动
 
 ```bash
@@ -80,7 +82,7 @@ go get -u github.com/golang/dep/cmd/dep
 dep init
 ```
 
->- 其他依赖管理工具 [glide](https://my.oschina.net/u/553243/blog/1475626) [godep](https://studygolang.com/articles/4385)
+>- 其他依赖管理工具 [glide](https://my.oschina.net/u/553243/blog/1475626) [godep](https://studygolang.com/articles/4385) [govendor](https://github.com/kardianos/govendor)
 
 - ### 测试 go test
 
