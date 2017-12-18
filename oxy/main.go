@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	// _ "net/http/pprof"
 	"runtime"
 
 	"github.com/vulcand/oxy/forward"
@@ -9,6 +10,7 @@ import (
 )
 
 func main() {
+	// go http.ListenAndServe(":8888", nil)
 	runtime.GOMAXPROCS(4)
 	fwd, _ := forward.New()
 	redirect := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

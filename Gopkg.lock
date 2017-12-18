@@ -44,6 +44,12 @@
   version = "v1.1"
 
 [[projects]]
+  branch = "alexander/cbfix"
+  name = "github.com/mailgun/oxy"
+  packages = ["utils"]
+  revision = "563343dd5c1f1997846c85e353fbf81708982ab5"
+
+[[projects]]
   name = "github.com/urfave/negroni"
   packages = ["."]
   revision = "5dbbc83f748fc3ad38585842b0aedab546d0ea1e"
@@ -55,9 +61,15 @@
   revision = "d42167fd04f636e20b005e9934159e95454233c7"
   version = "v20160617"
 
+[[projects]]
+  branch = "alexander/cbfix"
+  name = "github.com/vulcand/oxy"
+  packages = ["forward","testutils","utils"]
+  revision = "563343dd5c1f1997846c85e353fbf81708982ab5"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "2b36041fcb34203ffd8eec2e433d2ed959ce470df318cdbafe3d4ad5ba3e0027"
+  inputs-digest = "139d8659b81f38342b01b01bdb707af69e30c902823b896c5b5e28d620497868"
   solver-name = "gps-cdcl"
   solver-version = 1
