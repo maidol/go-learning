@@ -29,42 +29,18 @@ go doc time.Duration.Seconds # 包成员的方法
 godoc -http :8000
 ```
 
-## 开发
-----
-
 - ### 查看包元数据 go list
 
 ```bash
 go list -json time # 包名
 ```
 
-- ### 安装依赖
+## 开发
+----
 
-```bash
-go get # 为GOPATH管理代码
-```
+- ### 项目初始化
 
-- ### 构建/安装
-
-```bash
-go build
-go install
-```
-
-- ### 监控代码变化自动重启 [gin](https://github.com/codegangsta/gin) [fresh](https://github.com/pilu/fresh)
-
-```bash
-go -p 3000 -a 8080 # -p 代理端口, -a web程序端口, 访问 localhost:3000 => localhost:8080
-```
-
-- ### 直接代码启动
-
-```bash
-go run main.go
-```
-
-- ### 依赖管理工具, dep 为应用管理代码, [dep教程](https://studygolang.com/articles/10589)
-
+依赖管理工具, dep 为应用管理代码, [dep教程](https://studygolang.com/articles/10589)
 
 >- 设置环境变量
 
@@ -79,14 +55,57 @@ GO15VENDOREXPERIMENT=1
 go get -u github.com/golang/dep/cmd/dep
 ```
 
->- 初始化
+>- 初始化项目
 
 ```bash
+mkdir sample
+cd sample
 # Gopkg.lock, Gopkg.toml, vender
 dep init
 ```
 
+>- 安装依赖
+
+```bash
+dep ensure # 
+dep ensure -update
+dep ensure -add github.com/pkg/errors
+```
+
 >- 其他依赖管理工具 [glide](https://my.oschina.net/u/553243/blog/1475626) [godep](https://studygolang.com/articles/4385) [govendor](https://github.com/kardianos/govendor)
+
+- ### 监控代码变化自动重启 [gin](https://github.com/codegangsta/gin) [fresh](https://github.com/pilu/fresh)
+
+>- 安装
+
+```bash
+go get github.com/codegangsta/gin
+```
+
+>- 运行
+
+```bash
+go -p 3000 -a 8080 # -p 代理端口, -a web程序端口, 访问 localhost:3000 => localhost:8080
+```
+
+- ### 使用go get安装依赖
+
+```bash
+go get # 为GOPATH管理代码
+```
+
+- ### 构建/安装
+
+```bash
+go build
+go install
+```
+
+- ### 代码启动
+
+```bash
+go run main.go
+```
 
 - ### 测试 go test
 
