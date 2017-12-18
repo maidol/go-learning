@@ -53,6 +53,10 @@ go install
 
 - ### 监控代码变化自动重启 [gin](https://github.com/codegangsta/gin) [fresh](https://github.com/pilu/fresh)
 
+```bash
+go -p 3000 -a 8080 # -p 代理端口, -a web程序端口, 访问 localhost:3000 => localhost:8080
+```
+
 - ### 直接代码启动
 
 ```bash
