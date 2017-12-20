@@ -11,6 +11,8 @@
 
 ## [golang.org](https://golang.org/pkg/)
 
+## [GO语言圣经(中文版) ](https://docs.hacknode.org/)
+
 ## 查看文档
 ----
 
