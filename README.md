@@ -42,7 +42,7 @@ go list -json time # 包名
 
 - ### 项目初始化
 
-依赖管理工具, dep 为应用管理代码, [dep教程](https://studygolang.com/articles/10589)
+依赖管理工具, dep 为应用管理代码, [dep教程](http://www.mamicode.com/info-detail-1947553.html)[github: dep](https://github.com/golang/dep)
 
 >- 设置环境变量
 
@@ -64,6 +64,7 @@ mkdir sample
 cd sample
 # Gopkg.lock, Gopkg.toml, vender
 dep init
+dep init -v #
 ```
 
 >- 安装依赖
@@ -74,7 +75,7 @@ dep ensure -update
 dep ensure -add github.com/pkg/errors
 ```
 
->- 其他依赖管理工具 [glide](https://my.oschina.net/u/553243/blog/1475626) [godep](https://studygolang.com/articles/4385) [govendor](https://github.com/kardianos/govendor)
+>- 其他依赖管理工具 [glide](https://github.com/Masterminds/glide) [godep](github.com/tools/godep) [govendor](https://github.com/kardianos/govendor)
 
 - ### 监控代码变化自动重启 [gin](https://github.com/codegangsta/gin) [fresh](https://github.com/pilu/fresh)
 

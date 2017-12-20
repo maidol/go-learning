@@ -64,12 +64,12 @@
 [[projects]]
   branch = "alexander/cbfix"
   name = "github.com/vulcand/oxy"
-  packages = ["forward","testutils","utils"]
+  packages = ["forward","testutils"]
   revision = "563343dd5c1f1997846c85e353fbf81708982ab5"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "139d8659b81f38342b01b01bdb707af69e30c902823b896c5b5e28d620497868"
+  inputs-digest = "bc412d13cafddf7b524a14b5c74053b06bc24d6a79d0aa45df16a9021adf44cb"
   solver-name = "gps-cdcl"
   solver-version = 1
