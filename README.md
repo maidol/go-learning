@@ -13,6 +13,8 @@
 
 ## [GO语言圣经(中文版) ](https://docs.hacknode.org/)
 
+## [GO命令详解](http://wiki.jikexueyuan.com/project/go-command-tutorial/0.14.html)
+
 ## 查看文档
 ----
 
