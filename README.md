@@ -196,7 +196,7 @@ go get 需要http代理, shadowsocks使用的是socks5代理, 需要添加http�
 ```bash
 # for linux
 #You can set these environment variables in your bash_profile, but if you want to limit their usage to go, you can run it like this:
-$ http_proxy=127.0.0.1:7777 go get code.google.com/p/go.crypto/bcrypt
+$ http_proxy=127.0.0.1:7777 go get -u -v code.google.com/p/go.crypto/bcrypt
 # for linux
 #If that's what you always want, set this alias to avoid typing proxy part every time:
 $ alias go='http_proxy=127.0.0.1:7777 go'
