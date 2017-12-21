@@ -219,3 +219,5 @@ export https_proxy="http://127.0.0.1:7777"
 - ### [fmt字符串格式化占位符](https://studygolang.com/articles/2644)
 
 - ### ab压测工具
+
+- ### [构建最小的Go程序镜像](http://time-track.cn/build-minimal-go-image.html)
