@@ -2,10 +2,22 @@
 
 
 [[projects]]
+  name = "github.com/coreos/etcd"
+  packages = ["auth/authpb","clientv3","etcdserver/api/v3rpc/rpctypes","etcdserver/etcdserverpb","mvcc/mvccpb"]
+  revision = "b19dae00651b890498bcca38ac2cc3cad471281e"
+  version = "v3.2.12"
+
+[[projects]]
   name = "github.com/gin-gonic/gin"
   packages = [".","binding","render"]
   revision = "50e7e427300a7eeeb299a4cd5bc1ebfa04d48528"
   version = "v0.5"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/golang/protobuf"
+  packages = ["proto","protoc-gen-go/descriptor","ptypes","ptypes/any","ptypes/duration","ptypes/timestamp"]
+  revision = "1e59b77b52bf8e4b449a57e6f79f21226d571845"
 
 [[projects]]
   name = "github.com/gorilla/context"
@@ -67,9 +79,33 @@
   packages = ["forward","testutils"]
   revision = "563343dd5c1f1997846c85e353fbf81708982ab5"
 
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/net"
+  packages = ["context","http2","http2/hpack","idna","internal/timeseries","lex/httplex","trace"]
+  revision = "d866cfc389cec985d6fda2859936a575a55a3ab6"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/text"
+  packages = ["collate","collate/build","internal/colltab","internal/gen","internal/tag","internal/triegen","internal/ucd","language","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
+  revision = "eb22672bea55af56d225d4e35405f4d2e9f062a0"
+
+[[projects]]
+  branch = "master"
+  name = "google.golang.org/genproto"
+  packages = ["googleapis/api/annotations","googleapis/rpc/status"]
+  revision = "a8101f21cf983e773d0c1133ebc5424792003214"
+
+[[projects]]
+  name = "google.golang.org/grpc"
+  packages = [".","balancer","balancer/roundrobin","codes","connectivity","credentials","encoding","grpclb/grpc_lb_v1/messages","grpclog","health/grpc_health_v1","internal","keepalive","metadata","naming","peer","resolver","resolver/dns","resolver/passthrough","stats","status","tap","transport"]
+  revision = "e687fa4e6424368ece6e4fe727cea2c806a0fcb4"
+  version = "v1.8.2"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "bc412d13cafddf7b524a14b5c74053b06bc24d6a79d0aa45df16a9021adf44cb"
+  inputs-digest = "568e2badbe185132ce240a673848fc68429fdec9409fe5443e6a0fb75887cdc4"
   solver-name = "gps-cdcl"
   solver-version = 1

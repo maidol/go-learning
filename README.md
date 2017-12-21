@@ -185,4 +185,35 @@ $ go tool pprof -text -nodecount=10 ./http.test cpu.log
 
 ## 记录
 ----
+- ### go get代理问题 [参考0](https://studygolang.com/articles/9490?fr=sidebar) [参考1](https://stackoverflow.com/questions/10383299/how-do-i-configure-go-to-use-a-proxy) [参考2](https://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy/3406766#3406766)
+```txt
+go get 需要http代理, shadowsocks使用的是socks5代理, 需要添加http代理在shadowsocks的前端, 而shadowsocks作为二级代理。go get 下载package时, 第一步先根据包名获取真正的代码下载地址, 再使用版本控制软件下载代码, 最后go安装。这里的http代理涉及到两个, 一个是go get使用的代理, 另一个是版本控制软件使用的代理, 需分别设置
+```
+>- 安装并设置http代理[cow](https://github.com/cyfdecyf/cow/)
+>- 设置版本控制软件的http代理[git mercurial svn](https://github.com/golang/go/wiki/GoGetProxyConfig) [相关问题](https://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy/3406766#3406766)
+>- 设置go get的http代理 [相关问题](https://stackoverflow.com/questions/10383299/how-do-i-configure-go-to-use-a-proxy)
+
+```bash
+# for linux
+#You can set these environment variables in your bash_profile, but if you want to limit their usage to go, you can run it like this:
+$ http_proxy=127.0.0.1:7777 go get code.google.com/p/go.crypto/bcrypt
+# for linux
+#If that's what you always want, set this alias to avoid typing proxy part every time:
+$ alias go='http_proxy=127.0.0.1:7777 go'
+```
+
+>- [设置http_proxy/https_proxy环境变量](http://nanxiao.me/en/set-proxy-when-executing-go-get-command/) go get使用的代理
+
+```shell
+# powershell
+$env:http_proxy="http://127.0.0.1:7777"
+$env:https_proxy="http://127.0.0.1:7777"
+# cmd
+set http_proxy="http://127.0.0.1:7777"
+set https_proxy="http://127.0.0.1:7777"
+# bash
+export http_proxy="http://127.0.0.1:7777"
+export https_proxy="http://127.0.0.1:7777"
+```
+
 - ### [fmt字符串格式化占位符](https://studygolang.com/articles/2644)
