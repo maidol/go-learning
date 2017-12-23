@@ -15,6 +15,8 @@
 
 ## [GO命令详解](http://wiki.jikexueyuan.com/project/go-command-tutorial/0.14.html)
 
+## [GO入门指南](http://wiki.jikexueyuan.com/project/the-way-to-go/)
+
 ## 查看文档
 ----
 
