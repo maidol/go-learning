@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/coreos/etcd/etcdserver/api/v3rpc/rpctypes"
+	"github.com/coreos/etcd/mvcc/mvccpb"
 
 	etcd "github.com/coreos/etcd/clientv3"
 )
@@ -36,9 +37,21 @@ func main() {
 		Endpoints:   []string{"localhost:2379"},
 		DialTimeout: 5 * time.Second,
 	}
-	// fmt.Println(config)
+	fmt.Printf("%v\n", config)
 	cli, err := etcd.New(config)
-	fmt.Printf("%v", config)
+
+	rch := cli.Watch(context.Background(), "sample_key")
+	for wresp := range rch {
+		fmt.Println("len(wresp.Events)", len(wresp.Events))
+		fmt.Printf("wresp %+v\n", wresp)
+		for _, ev := range wresp.Events {
+			fmt.Printf("ev %+v\n", ev)
+			fmt.Printf("%s %q : %q\n", ev.Type, ev.Kv.Key, ev.Kv.Value)
+			if string(ev.Kv.Key) != "sample_key" || ev.Type != mvccpb.PUT {
+				// continue
+			}
+		}
+	}
 
 	put(cli, "sample_key", "sample_value")
 
