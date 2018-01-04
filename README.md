@@ -220,6 +220,9 @@ export http_proxy="http://127.0.0.1:7777"
 export https_proxy="http://127.0.0.1:7777"
 ```
 
+- ### vscode插件
+Beautify/.jshintrc Genertor/Docker/Document This/EditorConfig/ESLint/ftp-sync/Git History/Git Merger/Git Project Manager/Go/HTML Snippets/jshint/mdeiawiki/nginx.conf/TODO Highlight/TODO Parser/vscode-icons/markdownlint
+
 - ### [fmt字符串格式化占位符](https://studygolang.com/articles/2644)
 
 - ### ab压测工具
