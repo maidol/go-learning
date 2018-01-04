@@ -40,7 +40,8 @@ func main() {
 	fmt.Printf("%v\n", config)
 	cli, err := etcd.New(config)
 
-	rch := cli.Watch(context.Background(), "sample_key")
+	// rch := cli.Watch(context.Background(), "sample_key")
+	rch := cli.Watch(context.Background(), "/xway/", etcd.WithPrefix())
 	for wresp := range rch {
 		fmt.Println("len(wresp.Events)", len(wresp.Events))
 		fmt.Printf("wresp %+v\n", wresp)
