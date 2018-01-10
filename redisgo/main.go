@@ -15,6 +15,9 @@ func main() {
 
 	c := rpool.Get()
 
+	d, e := redis.StringMap(c.Do("HGETALL", "cw:gateway:token:01c48d98fa00440e92930960ca44ddba959f0ffd"))
+	fmt.Println(d, e)
+
 	// _, err := c.Do("SET", "gokey", "govalue", "EX", "5")
 	_, err := c.Do("SET", "gokey", "govalue")
 	if err != nil {
