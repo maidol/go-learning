@@ -34,7 +34,25 @@ func ABC() {
 
 }
 
+type T struct {
+	Name string
+}
+
 func main() {
+	a := 1
+	ap := &a
+	b := 1
+	bp := &a
+	fmt.Printf("%p, %p\n", &a, &b)
+	fmt.Printf("%p, %p\n", ap, bp)
+	c := &T{}
+	fmt.Printf("%p\n", c)
+	c = &T{}
+	fmt.Printf("%p\n", c)
+	d := T{}
+	fmt.Printf("%p\n", &d)
+	// a = "afffffffffffffffffffffffffffffffffffff"
+	// fmt.Printf("%p\n", &a)
 	// f()
 	// p := new(int)
 	// fmt.Println(p)

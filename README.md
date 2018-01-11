@@ -220,9 +220,14 @@ export http_proxy="http://127.0.0.1:7777"
 export https_proxy="http://127.0.0.1:7777"
 ```
 
+- ### vscode插件
+Beautify/.jshintrc Genertor/Docker/Document This/EditorConfig/ESLint/ftp-sync/Git History/Git Merger/Git Project Manager/Go/HTML Snippets/jshint/mdeiawiki/nginx.conf/TODO Highlight/TODO Parser/vscode-icons/markdownlint
+
 - ### [fmt字符串格式化占位符](https://studygolang.com/articles/2644)
 
 - ### ab压测工具
 
 - ### [构建最小的Go程序镜像](http://time-track.cn/build-minimal-go-image.html) [解决错误no such file](https://blog.codeship.com/building-minimal-docker-containers-for-go-applications/)
 - ### [go-swagger](https://github.com/go-swagger/go-swagger)
+
+- ### [排序](https://www.cnblogs.com/wangchaowei/p/7802811.html)
