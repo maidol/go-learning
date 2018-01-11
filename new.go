@@ -65,5 +65,28 @@ func main() {
 	s1 := s[3:6]
 	fmt.Println(s1)
 	fmt.Println([]byte(s))
-	fmt.Printf("%b", []byte(s))
+	fmt.Printf("%b\n", []byte(s))
+
+	tt(&T{})
+}
+
+func tt(ta TA) {
+	tt, ok := ta.(*T)
+	fmt.Println(ok)
+	ta.s()
+	tt.s()
+}
+
+type TA interface {
+	s()
+}
+
+type T struct{}
+
+// func (t *T) s() {
+// 	fmt.Println("T")
+// }
+
+func (t T) s() {
+	fmt.Println("T")
 }
