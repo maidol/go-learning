@@ -17,22 +17,24 @@ func main() {
 	checkErr(err)
 
 	// insert
-	stmt, err := db.Prepare("INSERT user SET name=?,email=?")
+	stmt1, err := db.Prepare("INSERT user SET name=?,email=?")
 	checkErr(err)
-	res, err := stmt.Exec("mysql", "mysql@bbb.com")
+	defer stmt1.Close()
+	res, err := stmt1.Exec("mysql", "mysql@bbb.com")
 	checkErr(err)
 	id, _ := res.LastInsertId()
 	fmt.Println(id)
 	// fmt.Println(res.RowsAffected())
 
 	// update
-	stmt, err = db.Prepare("update user set name=? where id=?")
+	stmt2, err := db.Prepare("update user set name=? where id=?")
 	checkErr(err)
-	res, err = stmt.Exec("coder", id)
+	defer stmt2.Close()
+	res, err = stmt2.Exec("coder", id)
 	checkErr(err)
 
 	// list
-	rows, err := db.Query("SELECT id, name, email FROM user")
+	rows, err := db.Query("SELECT id, name, email FROM user where id=?", id)
 	checkErr(err)
 	defer rows.Close()
 	for rows.Next() {
@@ -45,10 +47,11 @@ func main() {
 	}
 
 	// delete
-	stmt, err = db.Prepare("delete from user where id=?")
+	stmt3, err := db.Prepare("delete from user where id=?")
 	checkErr(err)
+	defer stmt3.Close()
 
-	res, err = stmt.Exec(id)
+	res, err = stmt3.Exec(id)
 	checkErr(err)
 
 	affect, err := res.RowsAffected()
