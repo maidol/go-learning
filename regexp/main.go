@@ -1,7 +1,10 @@
 package main
 
-import "regexp"
-import "fmt"
+import (
+	"fmt"
+	"regexp"
+	"strconv"
+)
 
 func main() {
 	var frontendIdRegex = regexp.MustCompile("/frontends/([^/]+)(?:/frontend)?$")
@@ -124,4 +127,8 @@ func main() {
 	reg = regexp.MustCompile(`[\f\t\n\r\v\123\x7F\x{10FFFF}\\\^\$\.\*\+\?\{\}\(\)\[\]\|]`)
 	fmt.Printf("%q\n", reg.ReplaceAllString("\f\t\n\r\v\123\x7F\U0010FFFF\\^$.*+?{}()[]|", "-"))
 	// "----------------------"
+
+	stc := 200
+	b, e := regexp.MatchString("^[2|3]", strconv.Itoa(stc))
+	fmt.Println(stc, b, e)
 }
