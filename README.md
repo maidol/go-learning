@@ -231,3 +231,16 @@ Beautify/.jshintrc Genertor/Docker/Document This/EditorConfig/ESLint/ftp-sync/Gi
 - ### [go-swagger](https://github.com/go-swagger/go-swagger)
 
 - ### [排序](https://www.cnblogs.com/wangchaowei/p/7802811.html)
+
+- ### [golang交叉编译](https://studygolang.com/articles/6002)
+
+使用Go来构建微服务的一个优点是，它会被编译成二进制包，这样的话，它就不需要框架或者运行依赖，这样非常有利，因为正如前面所说Alpine是一个非常轻量级的分发版，并不是所有C语言依赖库都有安装，所以Go的动态库依赖很可能也没有。所幸的是有专门的方法去禁用了cgo依赖，可以把应用通过链接的方式编译，我们只需要这样告诉编译器去重新构建我们的所有应用包就可以了：
+
+```bash
+$ CGO_ENABLED=0 go build -a -installsuffix cgo .
+```
+
+我们更详细说一下上边这个命令的细节： 
+CGO_ENABLED=0      是一个编译标志，会让构建系统忽略cgo并且静态链接所有依赖； 
+-a                 会强制重新编译，即使所有包都是由最新代码编译的； 
+-installsuffix cgo 会为新编译的包目录添加一个后缀，这样可以把编译的输出与默认的路径分离。
