@@ -18,11 +18,11 @@ func main() {
 	var i int
 	for {
 		time.Sleep(time.Second * 10)
-		// if _, err := l.Accept(); err != nil {
-		// 	log.Println("accept error:", err)
-		// 	break
-		// }
+		if _, err := l.Accept(); err != nil {
+			log.Println("accept error:", err)
+			break
+		}
 		i++
-		// log.Printf("%d: accept a new connection\n", i)
+		log.Printf("%d: accept a new connection\n", i)
 	}
 }
