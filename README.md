@@ -244,3 +244,5 @@ $ CGO_ENABLED=0 go build -a -installsuffix cgo .
 CGO_ENABLED=0      是一个编译标志，会让构建系统忽略cgo并且静态链接所有依赖； 
 -a                 会强制重新编译，即使所有包都是由最新代码编译的； 
 -installsuffix cgo 会为新编译的包目录添加一个后缀，这样可以把编译的输出与默认的路径分离。
+
+- ### [Go语言TCP Socket编程](https://studygolang.com/articles/5372)
