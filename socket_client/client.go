@@ -21,13 +21,26 @@ func establishConn(i int) net.Conn {
 	// 	log.Println(e)
 	// 	return nil
 	// }
+
+	go func() {
+		for {
+			time.Sleep(time.Second * 1)
+			if _, es := conn.Write([]byte("connect to server")); es != nil {
+				log.Println(es)
+			}
+			var d []byte
+			if _, er := conn.Read(d); er != nil {
+				log.Println(er)
+			}
+		}
+	}()
 	log.Println(i, ":connect to server ok")
 	return conn
 }
 
 func main() {
 	var sl []net.Conn
-	for i := 1; i < 1000000; i++ {
+	for i := 1; i < 10; i++ {
 		conn := establishConn(i)
 		if conn != nil {
 			sl = append(sl, conn)
