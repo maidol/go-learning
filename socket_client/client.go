@@ -24,11 +24,11 @@ func establishConn(i int) net.Conn {
 	// }
 
 	go func() {
-		d := make([]byte, 512)
+		d := make([]byte, 512) // 一次读取512byte数据
 		var n int
 		for {
 			time.Sleep(time.Second * 1)
-			if _, es := conn.Write([]byte("msg from client connection: " + strconv.Itoa(i))); es != nil {
+			if _, es := conn.Write([]byte("消息 msg from client connection: " + strconv.Itoa(i))); es != nil {
 				log.Println(es)
 			}
 			var er error

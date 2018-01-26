@@ -24,7 +24,7 @@ func main() {
 			break
 		}
 		go func() {
-			d := make([]byte, 512)
+			d := make([]byte, 1) // 一次读取1byte数据
 			var n int
 			for {
 				time.Sleep(time.Second * 1)
