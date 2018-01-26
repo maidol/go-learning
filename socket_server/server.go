@@ -24,18 +24,22 @@ func main() {
 			break
 		}
 		go func() {
+			d := make([]byte, 512)
+			var n int
 			for {
 				time.Sleep(time.Second * 1)
-				if _, es := c.Write([]byte("accept a new connection")); es != nil {
+				if _, es := c.Write([]byte("hello!")); es != nil {
 					log.Println(es)
 				}
-				var d []byte
-				if _, er := c.Read(d); er != nil {
+				var er error
+				if n, er = c.Read(d); er != nil {
 					log.Println(er)
 				}
+				log.Println(string(d[:n]))
 			}
 		}()
 		i++
 		log.Printf("%d: accept a new connection\n", i)
+		log.Println("local: ", c.LocalAddr().String(), ", remote: ", c.RemoteAddr().String())
 	}
 }
