@@ -247,3 +247,4 @@ CGO_ENABLED=0      是一个编译标志，会让构建系统忽略cgo并且静�
 
 - ### [Go语言TCP Socket编程](https://studygolang.com/articles/5372)
 - ### [文件操作](https://gocn.io/article/40)
+- ### [深入解析go](https://tiancaiamao.gitbooks.io/go-internals/content/zh/08.1.html)
