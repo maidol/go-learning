@@ -92,11 +92,11 @@ func consume() {
 			}
 		case err, more := <-consumer.Errors():
 			if more {
-				fmt.Println("Kafka consumer error: %v", err.Error())
+				fmt.Printf("Kafka consumer error: %v\n", err.Error())
 			}
 		case ntf, more := <-consumer.Notifications():
 			if more {
-				fmt.Println("Kafka consumer rebalance: %v", ntf)
+				fmt.Printf("Kafka consumer rebalance: %v\n", ntf)
 			}
 		case <-sig:
 			fmt.Errorf("Stop consumer server...")

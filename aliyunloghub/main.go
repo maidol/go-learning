@@ -57,9 +57,9 @@ func main() {
 	// put logs to logstore
 	for loggroupIdx := 0; loggroupIdx < 1; loggroupIdx++ {
 		logs := []*sls.Log{}
-		for logIdx := 0; logIdx < 5; logIdx++ {
+		for logIdx := 0; logIdx < 1; logIdx++ {
 			content := []*sls.LogContent{}
-			for colIdx := 0; colIdx < 10; colIdx++ {
+			for colIdx := 0; colIdx < 5; colIdx++ {
 				content = append(content, &sls.LogContent{
 					Key:   proto.String(fmt.Sprintf("col_%d", colIdx)),
 					Value: proto.String(fmt.Sprintf("loggroup idx: %d, log idx: %d, col idx: %d, value: %d", loggroupIdx, logIdx, colIdx, rand.Intn(10000000))),

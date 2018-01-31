@@ -1,7 +1,9 @@
 package main
 
 import (
+	"errors"
 	"fmt"
+	"time"
 )
 
 var global *int
@@ -89,6 +91,8 @@ func main() {
 
 	mt := TT{}
 	fmt.Println(mt == TT{})
+
+	fmt.Printf("time %s %s\n", 30*time.Second, errors.New("error001").Error())
 }
 
 func tt(ta TTA) {
