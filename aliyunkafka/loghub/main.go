@@ -34,11 +34,12 @@ func init() {
 
 	var err error
 
-	logproject := &sls.LogProject{}
-	flag.StringVar(&logproject.Name, "projectname", "epaper", "loghub project name")
-	flag.StringVar(&logproject.Endpoint, "endpoint", "cn-beijing.log.aliyuncs.com", "loghub endpoint")
-	flag.StringVar(&logproject.AccessKeyID, "accesskeyid", "", "loghub AccessKeyID")
-	flag.StringVar(&logproject.AccessKeySecret, "accesskeysecret", "", "loghub AccessKeySecret")
+	// loghub
+	lhcfg := &Config{}
+	flag.StringVar(&lhcfg.LogProject.Name, "projectname", "epaper", "loghub project name")
+	flag.StringVar(&lhcfg.LogProject.Endpoint, "endpoint", "cn-beijing.log.aliyuncs.com", "loghub endpoint")
+	flag.StringVar(&lhcfg.LogProject.AccessKeyID, "accesskeyid", "", "loghub AccessKeyID")
+	flag.StringVar(&lhcfg.LogProject.AccessKeySecret, "accesskeysecret", "", "loghub AccessKeySecret")
 
 	cfg := &configs.MqConfig{}
 	configs.LoadJsonConfig(cfg, "mq.json")
@@ -92,7 +93,6 @@ func init() {
 	sig = make(chan os.Signal, 1)
 
 	// loghub
-	lhcfg := &Config{}
 	loghub = NewLoghub(lhcfg, consumer)
 	loghub.Run()
 }
