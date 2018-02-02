@@ -15,8 +15,8 @@ import (
 func main() {
 	logproject := &sls.LogProject{}
 
-	flag.StringVar(&logproject.Name, "projectname", "", "loghub project name")
-	flag.StringVar(&logproject.Endpoint, "endpoint", "", "loghub endpoint")
+	flag.StringVar(&logproject.Name, "projectname", "epaper", "loghub project name")
+	flag.StringVar(&logproject.Endpoint, "endpoint", "cn-beijing.log.aliyuncs.com", "loghub endpoint")
 	flag.StringVar(&logproject.AccessKeyID, "accesskeyid", "", "loghub AccessKeyID")
 	flag.StringVar(&logproject.AccessKeySecret, "accesskeysecret", "", "loghub AccessKeySecret")
 
