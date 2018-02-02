@@ -94,8 +94,9 @@ func main() {
 
 	fmt.Printf("time %s %s\n", 30*time.Second, errors.New("error001").Error())
 	fmt.Printf("time.Now().UnixNano() = %v\n", time.Now().UnixNano())
-	t, _ := time.Parse("2006-01-02T15:04:05+08:00", "2018-02-01T16:37:14+08:00")
-	fmt.Printf("time.parse %v\n", t)
+	local, _ := time.LoadLocation("Local")
+	t, _ := time.ParseInLocation("2006-01-02T15:04:05+08:00", "2018-02-03T02:05:31+08:00", local)
+	fmt.Printf("time.parse %v, %d\n", t, t.Unix())
 }
 
 func tt(ta TTA) {

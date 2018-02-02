@@ -1,12 +1,13 @@
 package main
 
 import (
-	"aliyun-log-go-sdk/example/util"
 	"flag"
 	"fmt"
 	"math/rand"
 	"strings"
 	"time"
+
+	"github.com/aliyun/aliyun-log-go-sdk/example/util"
 
 	sls "github.com/aliyun/aliyun-log-go-sdk"
 	"github.com/gogo/protobuf/proto"
