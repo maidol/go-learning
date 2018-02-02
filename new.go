@@ -93,6 +93,9 @@ func main() {
 	fmt.Println(mt == TT{})
 
 	fmt.Printf("time %s %s\n", 30*time.Second, errors.New("error001").Error())
+	fmt.Printf("time.Now().UnixNano() = %v\n", time.Now().UnixNano())
+	t, _ := time.Parse("2006-01-02T15:04:05+08:00", "2018-02-01T16:37:14+08:00")
+	fmt.Printf("time.parse %v\n", t)
 }
 
 func tt(ta TTA) {

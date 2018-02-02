@@ -86,9 +86,9 @@ func consume() {
 		select {
 		case msg, more := <-consumer.Messages():
 			if more {
-
-				fmt.Printf("kafka consumer msg: (%s): (%s)\n", msg.Key, msg.Value)
+				fmt.Printf("kafka consumer msg: (topic:%s) (partition:%d) (offset:%d) (%s): (%s)\n", msg.Topic, msg.Partition, msg.Offset, msg.Key, msg.Value)
 				consumer.MarkOffset(msg, "completed") // mark message as processed
+				fmt.Println("kafka consumer HighWaterMarks", consumer.HighWaterMarks())
 			}
 		case err, more := <-consumer.Errors():
 			if more {
