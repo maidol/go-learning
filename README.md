@@ -11,7 +11,7 @@
 
 ## [golang.org](https://golang.org/pkg/)
 
-## [GO语言圣经(中文版) ](https://docs.hacknode.org/)
+## [GO语言圣经(中文版) ](https://docs.hacknode.org/) [doc1](https://legacy.gitbook.com/book/wizardforcel/gopl-zh/details) [gitbook/pdf_download](https://legacy.gitbook.com/book/wizardforcel/gopl-zh/details)
 
 ## [GO命令详解](http://wiki.jikexueyuan.com/project/go-command-tutorial/0.14.html)
 
