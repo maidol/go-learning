@@ -97,6 +97,8 @@ func main() {
 	local, _ := time.LoadLocation("Local")
 	t, _ := time.ParseInLocation("2006-01-02T15:04:05+08:00", "2018-02-03T02:05:31+08:00", local)
 	fmt.Printf("time.parse %v, %d\n", t, t.Unix())
+
+	fmt.Printf("%d\n", 10<<20) // 10 * 1024 * 1024
 }
 
 func tt(ta TTA) {
