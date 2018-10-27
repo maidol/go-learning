@@ -191,7 +191,7 @@ $ go tool pprof -text -nodecount=10 ./http.test cpu.log
 ----
 - ### go get代理问题 [参考0](https://studygolang.com/articles/9490?fr=sidebar) [参考1](https://stackoverflow.com/questions/10383299/how-do-i-configure-go-to-use-a-proxy) [参考2](https://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy/3406766#3406766)
 ```txt
-go get 需要http代理, shadowsocks使用的是socks5代理, 需要添加http代理在shadowsocks的前端, 而shadowsocks作为二级代理。go get 下载package时, 第一步先根据包名获取真正的代码下载地址, 再使用版本控制软件下载代码, 最后go安装。这里的http代理涉及到两个, 一个是go get使用的代理, 另一个是版本控制软件使用的代理, 需分别设置
+go get 需要http代理, shadowsocks使用的是socks5代理, 需要添加http代理在shadowsocks的前端, 而shadowsocks作为二级代理。go get 下载package时, 第一步go get先根据包名获取真正的代码下载地址, 再使用版本控制软件下载代码, 最后go安装。这里的http代理涉及到两个, 一个是go get使用的代理, 另一个是版本控制软件使用的代理, 需分别设置
 ```
 >- 安装并设置http代理[cow](https://github.com/cyfdecyf/cow/)
 >- 设置版本控制软件的http代理[git mercurial svn](https://github.com/golang/go/wiki/GoGetProxyConfig) [相关问题](https://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy/3406766#3406766)
