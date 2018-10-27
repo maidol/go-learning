@@ -92,7 +92,7 @@ go get github.com/codegangsta/gin
 >- 运行
 
 ```bash
-go -p 3000 -a 8080 # -p 代理端口, -a web程序端口, 访问 localhost:3000 => localhost:8080
+gin -p 3000 -a 8080 # -p 代理端口, -a web程序端口, 访问 localhost:3000 => localhost:8080
 ```
 
 - ### 使用go get安装依赖
