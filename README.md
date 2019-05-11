@@ -196,7 +196,7 @@ go get 需要http代理, shadowsocks使用的是socks5代理, 需要添加http�
 >- 安装并设置http代理[cow](https://github.com/cyfdecyf/cow/)
 >- 设置版本控制软件的http代理[git mercurial svn](https://github.com/golang/go/wiki/GoGetProxyConfig) [相关问题](https://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy/3406766#3406766)
 >- 设置go get的http代理 [相关问题](https://stackoverflow.com/questions/10383299/how-do-i-configure-go-to-use-a-proxy)
->- ps: go 1.12版本之后支持go modules和GOPROXY特性，只要开启go modules就可以使用GOPROXY特性，设置GOPROXY=https://goproxy.io环境变量也可解决代理问题
+>- ps: go 1.12版本之后支持go modules和GOPROXY特性，只要开启go modules就可以使用GOPROXY特性，设置GOPROXY=https://goproxy.io 或 GOPROXY=https://athens.azurefd.net 环境变量也可解决代理问题
 
 ```bash
 # for linux
